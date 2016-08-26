@@ -98,6 +98,7 @@
           "aurelia-event-aggregator",
           "aurelia-framework",
           "aurelia-history",
+          "aurelia-http-client",
           "aurelia-history-browser",
           "aurelia-loader",
           "aurelia-loader-default",
@@ -113,6 +114,17 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "jquery",
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min",
+            "deps": ["jquery"],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
+          },
           {
             "name": "text",
             "path": "../scripts/text"

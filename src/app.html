@@ -1,3 +1,12 @@
 <template>
-  <h1>${message}</h1>
+  <require from="bootstrap/css/bootstrap.css"></require>
+    <input type="text" value.bind="email">
+    <input type="password" value.bind="password">
+    <button click.trigger="login()">Submit</button>
+
+  <p if.bind="fullName">${fullName} is logged in</p>
+  <ul>
+    <li repeat.for="item of playlist">${item.model.name}</li>
+  </ul>
+
 </template>
