@@ -8,7 +8,7 @@ export class AppHttpClient extends HttpClient {
     this.configure(config => {
       config
         .withBaseUrl(ENV.apiUrl)
-        .withCredentials();
+        .withCredentials(true);
     });
   }
 }

@@ -9,5 +9,11 @@ export class Dashboard {
     this.auth = auth;
   }
 
+  canActivate() {
+    return this.auth.isLoggedIn().then(res => {
+      console.log(res);
+    });
+  }
+
   // talk about async vs sync
 }
