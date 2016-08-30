@@ -1,25 +1,25 @@
-import {HttpClient} from 'aurelia-http-client';
+import {inject} from 'aurelia-framework';
+import {AppHttpClient} from '../api/AppHttpClient';
 import Env from '../environment';
 
+@inject(AppHttpClient)
 export class BaseModel {
-
-  constructor(model) {
-    this.client = new HttpClient();
-    this.client.configure(config => {
-      config.withBaseUrl(Env.apiEndpoint);
-    });
-    this.model = model;
-  }
-
   path = '';
 
+  constructor(client) {
+    this.client = client;
+  }
+
+  /**
+   * Sends a POST|PUT request to update or create a new model
+   *
+   * @returns {Promise.<T>|*}
+   */
   save() {
     let method = this.model.id ? 'put' : 'post';
     let path = this.model.id ? `${this.path}/${this.model.id}` : this.path;
     return this.client[method](path, this.model)
-      .then(res => {
-        return this;
-      });
+      .then(res => this);
   }
 
   /**
