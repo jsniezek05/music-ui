@@ -1,5 +1,6 @@
 import {inject} from 'aurelia-framework';
 import {AppHttpClient} from './AppHttpClient';
+import ENV from '../environment';
 
 @inject(AppHttpClient)
 export class Auth {
@@ -7,7 +8,7 @@ export class Auth {
     this.client = new HttpClient();
     this.client.configure(config => {
       config
-        .withBaseUrl(Env.apiEndpoint)
+        .withBaseUrl(ENV.apiUrl)
     });
   }
 

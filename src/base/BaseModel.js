@@ -1,6 +1,5 @@
 import {inject} from 'aurelia-framework';
 import {AppHttpClient} from '../api/AppHttpClient';
-import Env from '../environment';
 
 @inject(AppHttpClient)
 export class BaseModel {
