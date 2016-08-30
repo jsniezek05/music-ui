@@ -4,6 +4,7 @@ import ENV from '../environment';
 
 export class AppHttpClient extends HttpClient {
   constructor() {
+    super();
     this.configure(config => {
       config
         .withBaseUrl(ENV.apiUrl)
