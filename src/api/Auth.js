@@ -3,9 +3,12 @@ import {AppHttpClient} from './AppHttpClient';
 
 @inject(AppHttpClient)
 export class Auth {
-
-  constructor(client) {
-    this.client = client;
+  constructor(){
+    this.client = new HttpClient();
+    this.client.configure(config => {
+      config
+        .withBaseUrl(Env.apiEndpoint)
+    });
   }
 
   isLoggedIn() {

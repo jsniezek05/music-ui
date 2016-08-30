@@ -1,3 +1,10 @@
 <template>
-  <h1>${message}</h1>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./style.css"></require>
+  <require from="./resources/elements/navbar"></require>
+
+  <navbar></navbar>
+  <div class="row">
+    <router-view></router-view>
+  </div>
 </template>

@@ -1,5 +1,5 @@
 export default {
   debug: true,
   testing: true,
-  apiUrl: 'http://localhost:1337'
+  apiEndpoint: 'http://localhost:1337'
 };
