@@ -1,0 +1,17 @@
+<template>
+  <div>${error}</div>
+  <div align="center">
+    <div>
+      <h3>Please Sign In</h3>
+      <form submit.trigger="login()">
+        <div class="input-group">
+          <input type="text" value.bind="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+          <input type="password" value.bind="password" placeholder="Password">
+        </div>
+        <button class="btn btn-default-right" type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+</template>

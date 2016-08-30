@@ -5,7 +5,8 @@ export class Auth {
   constructor(){
     this.client = new HttpClient();
     this.client.configure(config => {
-      config.withBaseUrl(Env.apiEndpoint);
+      config
+        .withBaseUrl(Env.apiEndpoint)
     });
   }
 

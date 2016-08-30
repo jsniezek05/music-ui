@@ -1,12 +1,11 @@
 <template>
   <require from="bootstrap/css/bootstrap.css"></require>
-    <input type="text" value.bind="email">
-    <input type="password" value.bind="password">
-    <button click.trigger="login()">Submit</button>
+  <require from="./style.css"></require>
+  <require from="./resources/elements/navbar"></require>
 
-  <p if.bind="fullName">${fullName} is logged in</p>
-  <ul>
-    <li repeat.for="item of playlist">${item.model.name}</li>
-  </ul>
+  <navbar></navbar>
+  <div class="row">
+    <router-view></router-view>
+  </div>
 
 </template>

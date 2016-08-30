@@ -17,5 +17,6 @@ export class Playlist extends BaseModel {
       });
   }
 
+
   path = '/playlist';
 }
