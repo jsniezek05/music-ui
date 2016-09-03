@@ -1,7 +1,5 @@
 import {inject} from 'aurelia-framework';
 import {AppHttpClient} from './AppHttpClient';
-import {Song} from '../model/Song';
-import {Playlist} from '../model/Playlist';
 
 @inject(AppHttpClient)
 export class SongApi {
@@ -12,7 +10,7 @@ export class SongApi {
   }
 
   _createSongModels(response) {
-    return response.map(model => new Song(model));
+    return response.map(model => ModelFactory.newSong(model));
   }
 
   _createPlaylistModels(response) {

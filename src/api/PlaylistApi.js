@@ -9,9 +9,17 @@ export class PlaylistApi {
     this.resource = '/playlist';
   }
 
+  _createSongModels(response) {
+    return response.map(model => ModelFactory.newSong(model));
+  }
+
+  _createPlaylistModels(response) {
+    return response.map(model => new Playlist(model));
+  }
+
   getAll() {
     return this.client.get(this.url)
-      .then(response => console.log(response))
+      .then(this._createPlaylistModels.bind(this))
       .catch(err => console.log(err));
   }
 
