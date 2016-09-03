@@ -3,20 +3,5 @@ import {HttpClient} from 'aurelia-http-client';
 import ENV from '../environment';
 
 export class Playlist extends BaseModel {
-
-  static getAll() {
-    let client = new HttpClient();
-    client.configure(config => {
-      config.withBaseUrl(ENV.apiUrl);
-    });
-    return client.get('/playlist')
-      .then(res => {
-        return res.content.map(model => {
-          return new Playlist(model);
-        });
-      });
-  }
-
-
   path = '/playlist';
 }

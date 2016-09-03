@@ -12,6 +12,8 @@ export class Dashboard {
   canActivate() {
     return this.auth.isLoggedIn().then(res => {
       console.log(res);
+    }).catch(() => {
+      return new Redirect('login');
     });
   }
 

@@ -1,16 +1,16 @@
 import {bindable, inject} from 'aurelia-framework';
-import {Playlist} from '../../model/Playlist';
+import {PlaylistApi} from '../../api/PlaylistApi';
 import {Auth} from '../../api/Auth';
 
-@inject(Playlist, Auth)
+@inject(PlaylistApi, Auth)
 export class Playlists {
   playlists = [];
   @bindable newPlaylist = '';
   @bindable playlist;
   @bindable objPlaylist = {};
 
-  constructor(playlist, auth) {
-    this.playlist = playlist;
+  constructor(playlistApi, auth) {
+    this.playlistApi = playlistApi;
     this.auth = auth;
     this.user = this.auth.currentUser;
     this.loadPlaylists();
@@ -27,7 +27,7 @@ export class Playlists {
   // }
 
   loadPlaylists() {
-    Playlist.getAll()
+    this.playlistApi.getAll()
       .then(playlists => {
         this.playlists = playlists;
         console.log(this.playlists);
