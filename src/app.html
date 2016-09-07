@@ -1,9 +1,10 @@
 <template>
   <require from="./style.css"></require>
-  <require from="./resources/elements/navbar"></require>
-
-  <navbar></navbar>
-  <div class="row">
+  <require from="./resources/elements/topnav"></require>
+  <require from="./resources/elements/sidenav"></require>
+  <topnav></topnav>
+  <sidenav></sidenav>
+  <div class="routerview">
     <router-view></router-view>
   </div>
 </template>

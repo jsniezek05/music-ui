@@ -6,8 +6,8 @@ export class App {
   configureRouter(config, router){
     config.title = 'App';
     config.map([
-      { route: ['', 'dashboard'], name: 'dashboard', moduleId: './routes/dashboard',   title: 'Dashboard'},
-      { route: 'login', name: 'login', moduleId: './routes/login', title: 'Login'},
+      { route: ['', 'browse'], name: 'browse', moduleId: './routes/browse', title: 'Browse'},
+      { route: 'home', name: 'home', moduleId: './routes/home',   title: 'Home'},
     ]);
 
     this.router = router;
