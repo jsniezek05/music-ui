@@ -2,6 +2,11 @@
   <require from="./sidenav.css"></require>
   <div class="sidenav">
     <p class="headermain">MAIN</p>
+    <div class="subheader" repeat.for="route of router.navigation">
+      <a href.bind="route.href">
+        <i class="material-icons">${route.config.icon}</i>${route.title}
+      </a>
+    </div>
     <div class="subheader"><i class="material-icons">language</i>Browse</div>
     <div class="subheader"><i class="material-icons">assignment_ind</i>Activity</div>
     <div class="subheader"><i class="material-icons">radio</i>Radio</div>
@@ -15,6 +20,9 @@
 
 
     <p class="header">PLAYLISTS</p>
+    <div class="subheader" repeat.for="playlist of playlists">
+      <i class="material-icons">${playlist.icon}</i>${playlist.name}
+    </div>
     <div class="subheader"><i class="material-icons">play_circle_outline</i>My Playlist</div>
     <div class="subheader"><i class="material-icons">play_circle_outline</i>My Playlist</div>
     <div class="subheader"><i class="material-icons">play_circle_outline</i>My Playlist</div>
