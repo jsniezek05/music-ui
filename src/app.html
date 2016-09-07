@@ -1,10 +1,77 @@
 <template>
-  <require from="./style.css"></require>
-  <require from="./resources/elements/topnav"></require>
-  <require from="./resources/elements/sidenav"></require>
-  <topnav></topnav>
-  <sidenav></sidenav>
-  <div class="routerview">
-    <router-view></router-view>
+  <require from="./jp.css"></require>
+  <div class="nav">
+    <div class="search">
+      <i class="material-icons">search</i>
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="account">
+      <a href="">John Sniezek</a>
+      <div class="account-options">
+        <i class="material-icons" click.trigger="toggleOptions()">reorder</i>
+        <div class="menu" if.bind="showMenu">
+          <div class="option-link"><a href="">Account</a></div>
+          <div class="option-link"><a href="">Settings</a></div>
+          <div class="option-link"><a href="">Logout</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content">
+    <div class="left-nav">
+      <div class="menu-widget" repeat.for="item of [1,2,3, 5, 6, 7, 8, 9, 10]">
+        <div class="menu-title">
+          Main
+        </div>
+        <div class="menu-options">
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Browse</div>
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Activity</div>
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Radio</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="main-content">
+      <h1>Browse</h1>
+      <div class="browse-menu">
+        <a href="" class="active">Overview</a>
+        <a href="">Charts</a>
+        <a href="">Genres & Moods</a>
+        <a href="">New Releases</a>
+        <a href="">Discover</a>
+        <a href="">Concerts</a>
+      </div>
+    </div>
+    <div class="right-nav">
+      <div class="menu-widget" repeat.for="item of [1,2,3, 5, 6, 7, 8, 9, 10]">
+        <div class="menu-title">
+          Main
+        </div>
+        <div class="menu-options">
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Browse</div>
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Activity</div>
+          <div class="menu-link"><i class="material-icons">play_circle_outline</i>Radio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player">
+    <div class="controls">
+      <a href="">
+        <i class="material-icons">fast_rewind</i>
+      </a>
+      <a href="">
+        <i class="material-icons">play_circle_outline</i>
+      </a>
+      <a href="">
+        <i class="material-icons">fast_forward</i>
+      </a>
+    </div>
+    <div class="timeline"></div>
+    <div class="actions"></div>
   </div>
 </template>

@@ -1,0 +1,115 @@
+body
+  margin 0
+  padding 0
+
+.nav
+  display flex
+  justify-content space-between
+  background-color #313131
+  padding 10px
+  align-items center
+  color gray
+  border-bottom 1px solid black
+  .search
+    position relative
+    i
+      position absolute
+      top 3px
+      left 5px
+      font-size 20px
+    input
+      border-radius 25px
+      padding 5px 16px 5px 27px
+      border none
+      &:focus
+        outline none
+  .account
+    display flex
+    align-items center
+  a
+    color lightgray
+    text-decoration none
+    margin-right 20px
+  .account-options
+    display inline-block
+    position relative
+    i
+      &:hover
+        cursor pointer
+    .menu
+      display block
+      position: absolute;
+      background-color: #313131;
+      right -16%
+      top 150%
+      .option-link
+        a
+          padding 5px 25px
+          display block
+
+.content
+  display flex
+  justify-content space-between
+  color lightgray
+  .left-nav
+    padding 20px
+    background-color #313131
+    min-width 250px
+    max-height 82vh
+    overflow scroll
+    .menu-widget
+      margin-bottom 20px
+      .menu-title
+        margin-bottom 5px
+      .menu-link
+        display flex
+        align-items center
+        padding 4px 0
+        &:hover
+          color #fff
+          cursor pointer
+        i
+          font-size 18px
+          margin-right 10px
+  .main-content
+    width 100%
+    padding 10px 20px
+    background-color #282828
+    h1
+      color #fff
+    .browse-menu
+      border-bottom 1px solid #4a4a4a
+    a
+      color lightgray
+      text-decoration none
+      padding 20px 0
+      margin 0 20px
+      display inline-block
+      &:first-child
+        margin-left 0
+      &:hover
+        color #fff
+        border-bottom 3px solid lightgray
+      &.active
+        color #ff
+        border-bottom 3px solid #71da71
+  .right-nav
+    min-width 250px
+    background-color #313131
+    padding 20px
+    max-height 82vh
+    overflow scroll
+
+.player
+  background-color #313131
+  border-top 1px solid black
+  position fixed
+  width 100%
+  bottom 0
+  height 60px
+  display flex
+  align-items center
+  a
+    color #fff
+    font-size 20px
+    text-decoration none
